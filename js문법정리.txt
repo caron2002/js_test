@@ -1,0 +1,50 @@
+//console.log(); 콘솔에 값을 출력
+// const, let 변수 설정
+// const 와 let의 차이 const 로 생성한 변수는 업데이트 할 수없다.
+// 주로 const 를 사용
+// true false -> 로그인을 했는가 안 했는가? 등을 확인할때 사용
+// null 비어있다
+//배열명.push(추가값); -> 배열에 추가하기
+// object 설명이 필요한 정보는 object로
+// const player = {
+//   name: "caron",
+//   points: 10,
+//   fat: true,
+// };
+// console.log(player);
+// console.log(player["name"]);
+// player.lastName = "potato";
+// player.points = player.points + 15;
+// console.log(player.points);
+
+// 함수 만들기 object 안에서 함수는 함수명이 
+// const player = {
+//   name : "caron",
+//   sayHello: function(otherPersonName){
+//     console.log("hello " + otherPersonName + "nice to meet you");
+//   },
+// };
+// console.log(player.name);
+// player.sayHello("lynn");
+
+
+계산기 만들기
+const calcultor = {
+  add: function(a, b){
+    console.log(a + b);
+  },
+  minus: function(a, b){
+    console.log(a - b);
+  },
+  div: function(a, b){
+    console.log(a / b);
+  },
+  multi: function(a, b){
+    console.log(a * b);
+  },
+};
+
+calcultor.add(2, 3);
+calcultor.minus(23, 58);
+calcultor.div(234, 54);
+calcultor.multi(23, 45);

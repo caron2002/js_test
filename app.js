@@ -1,17 +1,19 @@
-//console.log(); 콘솔에 값을 출력
-// const, let 변수 설정
-// const 와 let의 차이 const 로 생성한 변수는 업데이트 할 수없다.
-// 주로 const 를 사용
+const calcultor = {
+  add: function(a, b){
+    console.log(a + b);
+  },
+  minus: function(a, b){
+    console.log(a - b);
+  },
+  div: function(a, b){
+    console.log(a / b);
+  },
+  multi: function(a, b){
+    console.log(a * b);
+  },
+};
 
-
-const a = 5;
-const b = 2;
-let myName = "caron";
-
-console.log(a+b);
-console.log(a*b);
-console.log(a/b);
-console.log("hello" + myName);
-
-myName = "david"
-console.log("your new name is " + myName);
+calcultor.add(2, 3);
+calcultor.minus(23, 58);
+calcultor.div(234, 54);
+calcultor.multi(23, 45);
