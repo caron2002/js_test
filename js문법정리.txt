@@ -48,3 +48,49 @@ calcultor.add(2, 3);
 calcultor.minus(23, 58);
 calcultor.div(234, 54);
 calcultor.multi(23, 45);
+
+return 하는 방법
+
+const age = 20;
+function calculateKrAge(ageOfForeigner) {
+  return ageOfForeigner + 2;
+}
+
+const krAge = calculateKrAge(age);
+console.log(krAge);
+
+//prompt 사용자에게 응답을 받을 수있다. input과 비슷/ 사용은 잘 안함
+//타입 보는 방법 / typeof 변수명
+//타입 변경 방법 / parseInt();
+const age = parseInt(prompt("How old are you?"));
+
+console.log(age);
+
+
+//NaN == Not a Number
+// if문 condition은 boolean이여야 한다
+// and 연산자 &&, or 연산자 ||
+const age =parseInt(prompt("How old are you?"));
+//parseInt("문자") => NaN 값을 준다
+if (isNaN(age) || age < 0) {
+  age2 = parseInt(prompt("Please write a real positive number"));
+  if (!isNaN(age2)) { // ! == not의 개념
+    if (age2 < 18) {
+      console.log("You are too young.");
+    } else if (age2 < 50) {
+      console.log("you great");
+    } else {
+      console.log("you are too living.");
+    }
+    
+  }
+} else {
+  console.log("Thank you for writing your age")
+}
+
+// 불 연산자 
+// == Equal operator
+// 1 == "1" => true / 값이 같으면 true
+// === Strict Equal operator
+// 1 === "1" => false // 모든게 같아야지 true
+// !== 같지 않다
