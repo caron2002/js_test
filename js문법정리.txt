@@ -94,3 +94,81 @@ if (isNaN(age) || age < 0) {
 // === Strict Equal operator
 // 1 === "1" => false // 모든게 같아야지 true
 // !== 같지 않다
+
+-------------------------------------------------------------------------
+// document == HTML코드
+// document.title = "Hello! From JS!"; -> document 제목이 변경됨
+// document.getElementById("title") -> html에서 id가 title인 요소의 값을 가져온다(배열로 가져온다)
+const title = document.getElementById("title")
+
+title.innerText = "Got you!";
+
+console.log(title.id);
+console.log(title.className);
+
+
+// 보통 id 보다 class를 많이 사용
+
+const hellos = document.getElementsByClassName("hello");
+
+console.log(hellos);
+// 실행결과 
+// HTMLCollection(5) [h1.hello, h1.hello, h1.hello, h1.hello, h1.hello]
+// 배열로 가져온다
+
+------------------------------------------------------------------------
+//tagname == h1, div, class 등 
+//querySelector = element를 css 방식으로 검색할 수 있다.
+
+const title = document.querySelector(".hello h1");
+// .hello 에서 .은 class를 뜻 한다
+// hello 안에 있는 h1을 가져온다
+// 첫 번째 요소값만 가져온다
+// querySelector("#hello"); -> #은 id를 뜻한다
+const allTitle = document.querySelectorAll(".hello h1");
+// 모든 h1요소들을 가져온다
+
+console.log(title);
+console.log(allTitle);
+-------------------------------------------------------------------------
+const title = document.querySelector(".hello h1");
+
+function handleTitleClick() {
+  title.style.color = "red";
+}
+
+
+title.addEventListener("click", handleTitleClick);
+// addEventlistener = event가 발생을 감지
+// addEventListener("event", event가 발생 했을 때 하고 싶은 행위);
+--------------------------------------------------------------------------
+
+listen 하고싶은 element 찾는 방법
+크롬에 "element 이름" html element mdn 검색
+
+title.addEventListener("click", handleTitleClick);
+-> title.onclick = handleTitleClick;  같은 의미
+
+
+//window는 기본제공
+window.addEventListener("resize", handlewindowResize);
+window.addEventListener("copy", handleWindowCopy);
+window.addEventListener("offline", handleWindowOffline);
+window.addEventListener("online", handleWindowOnline);
+-------------------------------------------------------------------------
+title을 click 했을 때 색변화
+
+const h1 = document.querySelector(".hello h1");
+
+function handleTitleClick() {
+  const currentColor = h1.style.color;
+  let newColor;
+  if (currentColor === "blue") {
+    newColor = "tomato";
+    
+  } else {
+    newColor = "blue";
+  }
+  h1.style.color = newColor;
+}
+h1.addEventListener("click", handleTitleClick);
