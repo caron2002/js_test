@@ -1,14 +1,10 @@
-const h1 = document.querySelector(".hello h1");
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
 
-function handleTitleClick() {
-  const currentColor = h1.style.color;
-  let newColor;
-  if (currentColor === "blue") {
-    newColor = "tomato";
-    
-  } else {
-    newColor = "blue";
-  }
-  h1.style.color = newColor;
+function onLogInSubmit(event) {
+  event.preventDefault(); //예전된 event를 막아준다
+  console.log(event);
 }
-h1.addEventListener("click", handleTitleClick);
+
+loginForm.addEventListener("submit", onLogInSubmit);
+// onLogInSubmit 함수를 호출 할때 event object를 담은 정보를 인수로 받고 호출
