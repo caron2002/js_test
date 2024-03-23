@@ -1,10 +1,35 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
 
-function onLogInSubmit(event) {
-  event.preventDefault(); //예전된 event를 막아준다
-  console.log(event);
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
+
+function loginSubmit(event) {
+  event.preventDefault();
+  const username = loginInput.value;
+  loginForm.classList.add(HIDDEN_CLASSNAME);
+  // 로컬저장소에 username을 저장
+  localStorage.setItem(USERNAME_KEY, username);
+  
+  //login 이후 나타날 것
+  paintGreetings(username);
 }
 
-loginForm.addEventListener("submit", onLogInSubmit);
-// onLogInSubmit 함수를 호출 할때 event object를 담은 정보를 인수로 받고 호출
+function paintGreetings(username) {
+  greeting.innerText = `Hello ${username}`;
+  greeting.classList.remove(HIDDEN_CLASSNAME);
+}
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+
+// 처음 웹을 실행 할 때는 savedusername이 null 값임
+if (savedUsername === null) {
+  // show the form
+  loginForm.classList.remove(HIDDEN_CLASSNAME);
+  loginForm.addEventListener("submit", loginSubmit);
+} else {
+  // show the greeting
+  paintGreetings(savedUsername);
+}
