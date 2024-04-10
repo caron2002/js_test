@@ -22,10 +22,10 @@ function paintToDo(newTodo) {
   const li = document.createElement("li");
   li.id = newTodo.id
   const span = document.createElement("span");
-  const button = document.createElement("button");
-  button.innerText = "❌";
-  li.appendChild(span);
+  const button = document.createElement("input");
+  button.type = "checkbox";
   li.appendChild(button);
+  li.appendChild(span);
   span.innerText = newTodo.text;
   toDoList.appendChild(li);
   button.addEventListener("click", deleteToDo);
